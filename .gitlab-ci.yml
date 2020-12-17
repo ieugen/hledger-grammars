@@ -7,12 +7,14 @@ build-job:
     - echo "Hello, $GITLAB_USER_LOGIN!"
     - rm -rf $HOME/.clojure/
     - git clone https://github.com/practicalli/clojure-deps-edn.git $HOME/.clojure/
+    - clojure -M:test/cognitect
     - clojure -M:project/uberdeps
 
-test-job:
-  stage: test
-  script:
-    - echo "This job tests something"
-    - rm -rf $HOME/.clojure/
-    - git clone https://github.com/practicalli/clojure-deps-edn.git $HOME/.clojure/
-    - clojure -M:test/cognitect
+# Build too slow with this job
+# test-job:
+#   stage: test
+#   script:
+#     - echo "This job tests something"
+#     - rm -rf $HOME/.clojure/
+#     - git clone https://github.com/practicalli/clojure-deps-edn.git $HOME/.clojure/
+#     - clojure -M:test/cognitect
