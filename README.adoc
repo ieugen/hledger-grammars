@@ -12,15 +12,15 @@ Download from https://gitlab.com/ieugen/hledger-grammars
 
 Run the project directly:
 
-    $ clojure -M -m ieugen.hledger-grammars
+    $ clojure -M -m ieugen.hledger.grammars
 
 Run the project's tests (they'll fail until you edit them):
 
-    $ clojure -M:test:runner
+    $ clojure -M:test/runner
 
 Build an uberjar:
 
-    $ clojure -M:uberjar
+    $ clojure -X:project/uberjar :main-class ieugen.hledger.grammars
 
 Run that uberjar:
 

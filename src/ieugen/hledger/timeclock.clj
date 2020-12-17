@@ -22,8 +22,8 @@
   (println (System/getProperty "user.dir"))
   
   (let [tclock (antlr/parser "grammars/timeclock.g4")]
-    (tclock "")
-    ;; (tclock "; un comentariu")
+    ;; (tclock "")
+    (tclock (slurp "test/samples/sample.timeclock"))
     )
   
   0)

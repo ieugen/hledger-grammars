@@ -1,10 +1,5 @@
 grammar timeclock;
 
-tokens { CLOCK_IN_START, CLOCK_OUT_START }
-
-fragment CLOCK_IN_START  : ('i'|'I');
-fragment CLOCK_OUT_START : ('o'|'O');
-
 fragment LOWERCASE      : [a-z];
 fragment UPPERCASE      : [A-Z];
 fragment Digit          : [0-9];
@@ -25,21 +20,14 @@ Int4: Digit Digit Digit Digit;
 
     NOTE: We only support full dates. Missing year will trigger errror.
  */
-// SIMPLE_DATE     : ;
-
-WHITESPACE  : (' ' | 't' ) ;
-NEWLINE     : ('r'? 'n' | 'r')+;
-
-COMMENT_LINE: ';' ~('\r' | '\n')*;
-
 
 journal: (transaction | COMMENT_LINE )*;
 
-/** A timeclock transaction is a clockin and clock-out pair */
-transaction: clock_in clock_out;
+/** A timeclock transaction is a clock-in and clock-out pair */
+transaction: clock_in NEWLINE clock_out NEWLINE;
 
-clock_in    : CLOCK_IN_START ' ' ;
-clock_out   : CLOCK_OUT_START ' ' ;
+clock_in    : CLOCK_IN_START ' ' dateBasic ' ' timeBasic ' ' acount ('  ' description)*;
+clock_out   : CLOCK_OUT_START ' ' dateBasic ' ' timeBasic;
 
 year: Int4;
 month: Int2;
@@ -49,3 +37,15 @@ minute: Int2;
 second: Int2;
 
 dateBasic: year '-' month '-' day;
+timeBasic: hour ':' minute (':' second)+;
+
+acount: (WORD (':' WORD)*)+;
+description: (WORD | WS)*;
+
+CLOCK_IN_START  : ('i'|'I');
+CLOCK_OUT_START : ('o'|'O');
+WORD: (UPPERCASE | LOWERCASE | Digit | '_')+;
+
+WS  : (' ' | '\t' );
+NEWLINE     : ('\r'? '\n' | '\r')+;
+COMMENT_LINE: ';' ~('\r' | '\n')* -> skip;
