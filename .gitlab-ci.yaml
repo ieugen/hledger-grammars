@@ -1,0 +1,11 @@
+build-job:
+  stage: build
+  script:
+    - echo "Hello, $GITLAB_USER_LOGIN!"
+    - clojure -M:project/uberdeps
+
+test-job:
+  stage: test
+  script:
+    - echo "This job tests something"
+    - clojure -M:test/cognitect

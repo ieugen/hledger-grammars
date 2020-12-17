@@ -39,8 +39,9 @@ second: Int2;
 dateBasic: year ('-' | '/' | '.') month ('-' | '/' | '.') day;
 timeBasic: hour ':' minute (':' second)+;
 
-acount: (WORD (':' WORD)*)+;
-description: (WORD | WS)*;
+acount: accountPart (':' accountPart)*;
+accountPart: WORD (' ' WORD)*;
+description: WORD(WORD | ' ')*;
 
 CLOCK_IN_START  : ('i'|'I');
 CLOCK_OUT_START : ('o'|'O');

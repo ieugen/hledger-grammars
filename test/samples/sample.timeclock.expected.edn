@@ -7,7 +7,7 @@
    " "
    (:timeBasic (:hour "09") ":" (:minute "00") ":" (:second "00"))
    " "
-   (:acount "projects" ":" "a"))
+   (:acount (:accountPart "projects") ":" (:accountPart "a")))
   "\n"
   (:clock_out
    "o"
@@ -24,7 +24,7 @@
    " "
    (:timeBasic (:hour "22") ":" (:minute "21") ":" (:second "45"))
    " "
-   (:acount "personal" ":" "reading" ":" "online"))
+   (:acount (:accountPart "personal") ":" (:accountPart "reading") ":" (:accountPart "online")))
   "\n"
   (:clock_out
    "o"
@@ -41,7 +41,7 @@
    " "
    (:timeBasic (:hour "09") ":" (:minute "00") ":" (:second "00"))
    " "
-   (:acount "projects" ":" "b")
+   (:acount (:accountPart "projects") ":" (:accountPart "b"))
    "  "
    (:description "ola"))
   "\n"

@@ -1,0 +1,18 @@
+= Change Log
+
+All notable changes to this project will be documented in this file. This change log follows the conventions of [keepachangelog.com](http://keepachangelog.com/).
+
+== [Unreleased]
+
+=== Changed
+
+- Initial Antlr grammar for hledger timeclock files
+- Supports parsing the simple examples from https://hledger.org/timeclock.html
+- Supports most simple date formats
+- Has sample files
+- Has tests for the sample files
+- Supports accounts names with spaces
+- Supports account descriptions
+- Automated build in gitlab
+
+[Unreleased]: https://gitlab.com/ieugen/hledger-grammars

@@ -21,7 +21,11 @@
 
   (println (System/getProperty "user.dir"))
 
-  (let [tclock (antlr/parser "grammars/timeclock.g4")]
-    (tclock (slurp "test/samples/sample.other.timeclock")))
+  (let [tclock (antlr/parser "grammars/timeclock.g4")
+        source (slurp "test/samples/sample.timeclock")
+        parsed (tclock source)]
+    (meta parsed) 
+    parsed
+    )
 
   0)
