@@ -36,7 +36,7 @@ hour: Int2;
 minute: Int2;
 second: Int2;
 
-dateBasic: year '-' month '-' day;
+dateBasic: year ('-' | '/' | '.') month ('-' | '/' | '.') day;
 timeBasic: hour ':' minute (':' second)+;
 
 acount: (WORD (':' WORD)*)+;

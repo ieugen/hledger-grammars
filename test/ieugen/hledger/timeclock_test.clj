@@ -11,7 +11,7 @@
     (is (= '(:journal) (tc/tclock (slurp "test/samples/comments.timeclock")))))
   (testing "Grammars with transactions"
     (is (= (edn/read-string (slurp "test/samples/sample.timeclock.expected.edn")) (tc/tclock (slurp "test/samples/sample.timeclock"))))
-    (is (= '(:journal) (tc/tclock (slurp "test/samples/sample.otherdate.timeclock"))))
+    (is (= (edn/read-string (slurp "test/samples/sample.other.timeclock.expected.edn")) (tc/tclock (slurp "test/samples/sample.other.timeclock"))))
     (is (= '(:journal) (tc/tclock (slurp "test/samples/basic-01.timeclock"))))
-    (is (= '(:journal) (tc/tclock (slurp "test/samples/basic-01.otherdate.timeclock"))))))
+    (is (= '(:journal) (tc/tclock (slurp "test/samples/basic-01.other.timeclock"))))))
 

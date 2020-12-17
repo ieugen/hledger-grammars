@@ -17,13 +17,11 @@
   (println (System/getenv))
   (pp/pprint (tclock "[1,2,3]")))
 
-(comment 
-  
+(comment
+
   (println (System/getProperty "user.dir"))
-  
+
   (let [tclock (antlr/parser "grammars/timeclock.g4")]
-    ;; (tclock "")
-    (tclock (slurp "test/samples/sample.timeclock"))
-    )
-  
+    (tclock (slurp "test/samples/sample.other.timeclock")))
+
   0)
