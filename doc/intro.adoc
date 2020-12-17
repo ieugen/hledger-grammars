@@ -1,3 +1,20 @@
 = Introduction to hledger-grammars
 
 TODO: write http://jacobian.org/writing/what-to-write/[great documentation]
+
+
+== Why?
+
+I felt the need to build some grammars for hledger since I wanted to process the formats from other languages.
+More specifically I wanted to build some tooling in ClojureScript.
+
+By producing (Antlr) grammars people can parse, validate and convert hledger journal files using a multitude of languages.
+Some of them are Clojure, Java and all JVM languages, ClojureScript, JavaScript and all the Nodejs/Browser languages, python, C,C++, etc.
+Here is the full list of https://github.com/antlr/antlr4/blob/4.6/doc/targets.md[Antlr 4 target languages and runtimes].
+
+=== References
+
+https://github.com/simonmichael[Simon Michael] gave me some tips on how to approach journal grammar.
+
+for journal: https://github.com/simonmichael/hledger/blob/master/hledger-lib/Hledger/Read/JournalReader.hs and https://hledger.org/journal.html.
+Tests and more examples can be found in https://github.com/simonmichael/hledger/tree/master/hledger/test/journal and https://github.com/simonmichael/hledger/tree/master/hledger/examples
