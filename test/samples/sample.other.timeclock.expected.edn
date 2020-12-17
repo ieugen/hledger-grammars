@@ -3,50 +3,50 @@
   (:clock_in
    "i"
    " "
-   (:dateBasic (:year "2009") "/" (:month "03") "/" (:day "27"))
+   (:date (:year "2009") "/" (:month "03") "/" (:day "27"))
    " "
-   (:timeBasic (:hour "09") ":" (:minute "00") ":" (:second "00"))
+   (:time (:hour "09") ":" (:minute "00") ":" (:second "00"))
    " "
    (:acount (:accountPart "projects") ":" (:accountPart "a")))
   "\n"
   (:clock_out
    "o"
    " "
-   (:dateBasic (:year "2009") "/" (:month "03") "/" (:day "27"))
+   (:date (:year "2009") "/" (:month "03") "/" (:day "27"))
    " "
-   (:timeBasic (:hour "17") ":" (:minute "00") ":" (:second "34")))
+   (:time (:hour "17") ":" (:minute "00") ":" (:second "34")))
   "\n")
  (:transaction
   (:clock_in
    "i"
    " "
-   (:dateBasic (:year "2009") "/" (:month "03") "/" (:day "31"))
+   (:date (:year "2009") "/" (:month "03") "/" (:day "31"))
    " "
-   (:timeBasic (:hour "22") ":" (:minute "21") ":" (:second "45"))
+   (:time (:hour "22") ":" (:minute "21") ":" (:second "45"))
    " "
    (:acount (:accountPart "personal") ":" (:accountPart "reading") ":" (:accountPart "online")))
   "\n"
   (:clock_out
    "o"
    " "
-   (:dateBasic (:year "2009") "/" (:month "04") "/" (:day "01"))
+   (:date (:year "2009") "/" (:month "04") "/" (:day "01"))
    " "
-   (:timeBasic (:hour "02") ":" (:minute "00") ":" (:second "34")))
+   (:time (:hour "02") ":" (:minute "00") ":" (:second "34")))
   "\n")
  (:transaction
   (:clock_in
    "i"
    " "
-   (:dateBasic (:year "2009") "/" (:month "04") "/" (:day "02"))
+   (:date (:year "2009") "/" (:month "04") "/" (:day "02"))
    " "
-   (:timeBasic (:hour "09") ":" (:minute "00") ":" (:second "00"))
+   (:time (:hour "09") ":" (:minute "00") ":" (:second "00"))
    " "
    (:acount (:accountPart "projects") ":" (:accountPart "b")))
   "\n"
   (:clock_out
    "o"
    " "
-   (:dateBasic (:year "2009") "/" (:month "04") "/" (:day "02"))
+   (:date (:year "2009") "/" (:month "04") "/" (:day "02"))
    " "
-   (:timeBasic (:hour "17") ":" (:minute "00") ":" (:second "34")))
+   (:time (:hour "17") ":" (:minute "00") ":" (:second "34")))
   "\n"))

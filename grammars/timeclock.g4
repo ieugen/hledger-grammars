@@ -7,6 +7,21 @@ fragment Digit          : [0-9];
 Int2: Digit Digit;
 Int4: Digit Digit Digit Digit;
 
+journal: (transaction | COMMENT_LINE )*;
+
+/** A timeclock transaction is a clock-in and clock-out pair */
+transaction: clock_in NEWLINE clock_out NEWLINE;
+
+clock_in    : CLOCK_IN_START ' ' date ' ' time ' ' acount ('  ' description)*;
+clock_out   : CLOCK_OUT_START ' ' date ' ' time;
+
+year: Int4;
+month: Int2;
+day: Int2;
+hour: Int2;
+minute: Int2;
+second: Int2;
+
 /**
     https://hledger.org/journal.html#simple-dates
 
@@ -18,26 +33,10 @@ Int4: Digit Digit Digit Digit;
     * or the current date when the command is run.
     Some examples: 2010-01-31, 2010/01/31, 2010.1.31, 1/31.
 
-    NOTE: We only support full dates. Missing year will trigger errror.
+    NOTE: Missing year will trigger errror.
  */
-
-journal: (transaction | COMMENT_LINE )*;
-
-/** A timeclock transaction is a clock-in and clock-out pair */
-transaction: clock_in NEWLINE clock_out NEWLINE;
-
-clock_in    : CLOCK_IN_START ' ' dateBasic ' ' timeBasic ' ' acount ('  ' description)*;
-clock_out   : CLOCK_OUT_START ' ' dateBasic ' ' timeBasic;
-
-year: Int4;
-month: Int2;
-day: Int2;
-hour: Int2;
-minute: Int2;
-second: Int2;
-
-dateBasic: year ('-' | '/' | '.') month ('-' | '/' | '.') day;
-timeBasic: hour ':' minute (':' second)+;
+date: year ('-' | '/' | '.') month ('-' | '/' | '.') day;
+time: hour ':' minute (':' second)+;
 
 acount: accountPart (':' accountPart)*;
 accountPart: WORD (' ' WORD)*;
