@@ -1,6 +1,6 @@
-(ns ieugen.hledger-grammars-test
+(ns ieugen.hledger.grammarstest
   (:require [clojure.test :refer :all]
-            [ieugen.hledger-grammars :refer :all]))
+            [ieugen.hledger.grammars :refer :all]))
 
 (deftest a-test
   (testing "FIXME, I fail."
