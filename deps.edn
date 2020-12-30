@@ -1,6 +1,6 @@
 {:paths ["src" "resources"]
  :deps {org.clojure/clojure {:mvn/version "1.10.1"}
-        clj-antlr/clj-antlr {:mvn/version "0.2.7"}}
+        clj-antlr/clj-antlr {:git/url "https://github.com/ieugen/clj-antlr.git" :sha "94572db7d2971a2f2223b436e338015255cae2dd" }}
  :aliases
  {:test {:extra-paths ["test"]
          :extra-deps {org.clojure/test.check {:mvn/version "1.1.0"}}}

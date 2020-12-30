@@ -1,0 +1,47 @@
+plugins {
+    id 'java'
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    runtime 'org.antlr:antlr4:4.9'
+}
+
+
+clean {
+    delete "$buildDir/grammars"
+}
+
+task copyGrammars(type: Copy) {
+    from "grammars"
+    into "$buildDir/grammars"
+}
+
+task generateLexer(type:JavaExec, dependsOn: [copyGrammars]) {
+  def lexerName = "TimeclockLexer"
+  inputs.file("$buildDir/grammars/${lexerName}.g4")
+  outputs.file("$buildDir/grammars/${lexerName}.js")
+  outputs.file("$buildDir/grammars/${lexerName}.interp")
+  outputs.file("$buildDir/grammars/${lexerName}.tokens")
+  main = 'org.antlr.v4.Tool'
+  classpath = sourceSets.main.runtimeClasspath
+  args = ['-Dlanguage=JavaScript', "$buildDir/grammars/${lexerName}.g4", '-o', "$buildDir/grammars"]
+  workingDir = "$buildDir/grammars"
+}
+
+task generateParser(type:JavaExec, dependsOn: [copyGrammars, generateLexer]) {
+  def lexerName = "TimeclockLexer"
+  def parserName = "TimeclockParser"
+  inputs.file("$buildDir/grammars/${parserName}.g4")
+  inputs.file("$buildDir/grammars/${lexerName}.tokens")
+  outputs.file("$buildDir/grammars/${parserName}.js")
+  outputs.file("$buildDir/grammars/${parserName}.interp")
+  outputs.file("$buildDir/grammars/${parserName}.tokens")
+  main = 'org.antlr.v4.Tool'
+  classpath = sourceSets.main.runtimeClasspath
+  args = ['-Dlanguage=JavaScript', "$buildDir/grammars/${parserName}.g4", '-no-listener', '-no-visitor', '-o', "$buildDir/grammars"]
+  workingDir = "$buildDir/grammars"
+}

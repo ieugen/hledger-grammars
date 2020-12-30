@@ -12,3 +12,8 @@
 
 grammars/.antlr
 .calva
+static/
+.lsp/
+.clj-kondo/
+
+build/
