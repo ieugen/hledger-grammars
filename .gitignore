@@ -17,3 +17,4 @@ static/
 .clj-kondo/
 
 build/
+.portal/

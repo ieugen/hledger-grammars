@@ -1,4 +1,4 @@
-(ns ieugen.hledger.grammars
+(ns ro.ieugen.hledger.grammars
   (:gen-class))
 
 (defn -main
