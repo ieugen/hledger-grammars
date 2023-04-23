@@ -113,5 +113,5 @@ tree-sitter highlight my/test/time-2020.timeclock
 --
 
 You should get sometething that looks like this:
-image::doc/timeclock-highlight.png[]
+image::https://gitlab.com/ieugen/hledger-grammars/-/raw/6fa63da61cc18d097fd51d3874b79fd1eb92c993/tree-sitter-hledger-timeclock/doc/timeclock-highlight.png[]
 
