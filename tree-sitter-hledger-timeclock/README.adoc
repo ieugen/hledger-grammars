@@ -1,0 +1,42 @@
+= tree-sitter grammer for hledger
+
+Exploring tree-sitter grammer since it is more popular for editors and IDEs.
+
+Tree-sitter has a nice guide on how to work on grammars.
+https://tree-sitter.github.io/tree-sitter/creating-parsers
+
+The workflow is like this:
+
+- Add a test in `test/corpus` for the use case you care.
+- The test will fail initially.
+- Make grammar changes for your language feature
+- Update test expectations to match the grammar
+- All other tests should pass
+- Use filter and debug options to narrow down the amount of text you view
+
+You can get inspiration on how to solve most issues by going through the existing list of tree-sitter parsers https://tree-sitter.github.io/tree-sitter/#parsers .
+
+
+[source,shell]
+--
+
+# change directory to grammar dir
+cd tree-sitter-hledger-timeclock
+# Install dependencies
+npm install
+
+# Make sure you have tree-sitter on path
+export PATH=$PATH:./node_modules/.bin
+
+# Generate the tree-sitter parser from js definition
+tree-sitter generate
+
+# Run grammar tests. Do it after every grammar change.
+tree-sitter test
+
+# Filter only a specific test and show debug
+tree-sitter test -f 'timeclock example' -d
+
+# Filter only a specific test and produce debug log in log.html
+tree-sitter test -f 'timeclock example' -D
+--

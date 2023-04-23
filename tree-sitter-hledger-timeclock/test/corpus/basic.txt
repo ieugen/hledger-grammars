@@ -1,0 +1,40 @@
+=================
+timeclock single # comment
+=================
+# This is a # comment line
+---
+(source_file
+ (comment))
+
+=================
+timeclock single ; comment
+=================
+; This is a ; comment line
+---
+(source_file
+ (comment))
+
+
+=================
+timeclock single * comment
+=================
+* This is a * comment line
+---
+(source_file
+ (comment))
+
+
+=================
+timeclock all comments and blank line
+=================
+# This is a # comment line
+* This is another comment line
+
+; This is a ; comment line. Above line left blank on purpose
+
+
+---
+(source_file
+ (comment)
+ (comment)
+ (comment))

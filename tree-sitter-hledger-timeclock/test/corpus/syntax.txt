@@ -1,0 +1,38 @@
+=================
+basic:one-posting
+=================
+
+i 2015-03-30 09:00:00 account1  description2
+o 2015-03-30 09:20:00
+
+---
+(source_file
+    (clock_in
+        (simple_date)
+        (time)
+        (account_name)
+        (tx_description))
+    (clock_out
+        (simple_date)
+        (time)))
+=================
+basic:in-comment-out
+=================
+
+i 2015-03-30 09:00:00 account1  description2
+# a sample comment
+o 2015-03-30 09:20:00
+
+---
+(source_file
+    (clock_in
+        (simple_date)
+        (time)
+        (account_name)
+        (tx_description))
+    (comment)
+    (clock_out
+        (simple_date)
+        (time)))
+
+

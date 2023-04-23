@@ -1,0 +1,103 @@
+[
+  {
+    "type": "clock_in",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "account_name",
+          "named": true
+        },
+        {
+          "type": "simple_date",
+          "named": true
+        },
+        {
+          "type": "time",
+          "named": true
+        },
+        {
+          "type": "tx_description",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "clock_out",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "simple_date",
+          "named": true
+        },
+        {
+          "type": "time",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "clock_in",
+          "named": true
+        },
+        {
+          "type": "clock_out",
+          "named": true
+        },
+        {
+          "type": "comment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "  ",
+    "named": false
+  },
+  {
+    "type": "account_name",
+    "named": true
+  },
+  {
+    "type": "comment",
+    "named": true
+  },
+  {
+    "type": "i",
+    "named": false
+  },
+  {
+    "type": "o",
+    "named": false
+  },
+  {
+    "type": "simple_date",
+    "named": true
+  },
+  {
+    "type": "time",
+    "named": true
+  },
+  {
+    "type": "tx_description",
+    "named": true
+  }
+]
